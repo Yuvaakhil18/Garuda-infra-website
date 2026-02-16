@@ -716,42 +716,48 @@ body {
 
 .scroll-indicator {
     position: absolute;
-    bottom: 50px;
+    bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
-    opacity: 0.8;
-    animation: float 3s ease-in-out infinite;
-    padding: 20px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(192, 192, 192, 0.04) 100%);
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    border-radius: 30px;
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2), inset 0 1px 10px rgba(255, 255, 255, 0.05);
-}
-
-@keyframes float {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(-10px); }
+    gap: 12px;
+    opacity: 0.7;
 }
 
 .scroll-line {
-    width: 3px;
-    height: 50px;
-    background: linear-gradient(to bottom, rgba(192, 192, 192, 0.8), rgba(192, 192, 192, 0.4), transparent);
-    border-radius: 50px;
-    box-shadow: 0 0 15px rgba(192, 192, 192, 0.3);
+    width: 24px;
+    height: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    position: relative;
+}
+
+.scroll-line::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 2px;
+    animation: scrollBounce 1.5s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+    0%, 100% { top: 8px; opacity: 1; }
+    50% { top: 20px; opacity: 0.4; }
 }
 
 .scroll-indicator span {
-    font-size: 12px;
-    letter-spacing: 2px;
+    font-size: 11px;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 300;
 }
 
 @media (max-width: 968px) {
@@ -1730,3 +1736,4 @@ body {
         gap: 40px;
     }
 }
+

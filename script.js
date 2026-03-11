@@ -35,25 +35,63 @@ window.addEventListener('scroll', () => {
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('navMenu');
 
+function toggleMenu(forceState) {
+    const isActive = typeof forceState === 'boolean' ? forceState : !hamburger.classList.contains('active');
+    hamburger.classList.toggle('active', isActive);
+    navMenu.classList.toggle('active', isActive);
+    hamburger.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+    if (isActive) {
+        // Focus first nav link for accessibility
+        const firstLink = navMenu.querySelector('.nav-link');
+        if (firstLink) firstLink.focus();
+    }
+}
+
 hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
+    toggleMenu();
+});
+
+// Keyboard accessibility for hamburger
+hamburger.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleMenu();
+    }
 });
 
 // Close menu when clicking on a link
 const navLinks = document.querySelectorAll('.nav-link');
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
+        toggleMenu(false);
     });
 });
 
 // Close menu when clicking outside
 document.addEventListener('click', (e) => {
     if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
+        toggleMenu(false);
+    }
+});
+
+// Trap focus inside nav menu when open (for accessibility)
+document.addEventListener('keydown', (e) => {
+    if (navMenu.classList.contains('active')) {
+        const focusable = navMenu.querySelectorAll('a, button, input, [tabindex]:not([tabindex="-1"])');
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.key === 'Tab') {
+            if (e.shiftKey && document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+            }
+        } else if (e.key === 'Escape') {
+            toggleMenu(false);
+            hamburger.focus();
+        }
     }
 });
 
@@ -444,4 +482,3 @@ document.head.appendChild(style);
 console.log('%cPREMIER INFRASTRUCTURE', 'color: #F4B400; font-size: 24px; font-weight: bold; font-family: Cinzel, serif;');
 console.log('%cBuilding Excellence Since 2009', 'color: #ffffff; font-size: 14px; font-family: Poppins, sans-serif;');
 console.log('%cInterested in working with us? Visit our careers page!', 'color: #8a8a8a; font-size: 12px; font-family: Poppins, sans-serif;');
-

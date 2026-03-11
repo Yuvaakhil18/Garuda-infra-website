@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>GARUDA  Developers - Building Tomorrow's Foundations</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,24 +40,24 @@
     </div>
 
     <!-- Glass Sticky Navbar -->
-    <nav class="navbar" id="navbar">
+    <nav class="navbar" id="navbar" aria-label="Main Navigation">
         <div class="nav-container">
             <div class="nav-logo">
                 <span class="logo-accent">GARUDA</span>
                 <span class="logo-main">DEVELOPERS</span>
             </div>
-            <div class="nav-menu" id="navMenu">
+            <div class="nav-menu" id="navMenu" role="navigation">
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#services" class="nav-link">Services</a>
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#about" class="nav-link">About</a>
                 <a href="#contact" class="nav-link nav-cta">Contact Us</a>
             </div>
-            <div class="hamburger" id="hamburger">
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navMenu">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
 
@@ -406,7 +406,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2026 Garuda Developers. All rights reserved.</p>
+                <p>&copy; 2024 Premier Infrastructure Development. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -414,4 +414,5 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 

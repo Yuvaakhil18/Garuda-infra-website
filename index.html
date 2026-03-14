@@ -22,6 +22,8 @@
         }
     </style>
     <link rel="stylesheet" href="style.css">
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 </head>
 <body>
 
@@ -62,7 +64,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="hero" id="home" data-aos="fade-up">
         <div class="hero-background"></div>
         <div class="hero-content">
             <div class="hero-text">
@@ -81,7 +83,7 @@
     </section>
 
     <!-- Services Section -->
-    <section class="services reveal-section" id="services">
+    <section class="services reveal-section" id="services" data-aos="fade-up">
         <div class="container">
             <div class="section-header">
                 <span class="section-label">Our Expertise</span>
@@ -163,7 +165,7 @@
     </section>
 
     <!-- Projects Gallery -->
-    <section class="projects reveal-section" id="projects">
+    <section class="projects reveal-section" id="projects" data-aos="fade-up">
         <div class="container">
             <div class="section-header">
                 <span class="section-label">Portfolio</span>
@@ -242,7 +244,7 @@
     </section>
 
     <!-- Stats Section -->
-    <section class="stats reveal-section">
+    <section class="stats reveal-section" data-aos="fade-up">
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item">
@@ -266,7 +268,7 @@
     </section>
 
     <!-- About Section -->
-    <section class="about reveal-section" id="about">
+    <section class="about reveal-section" id="about" data-aos="fade-up">
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
@@ -303,7 +305,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact reveal-section" id="contact">
+    <section class="contact reveal-section" id="contact" data-aos="fade-up">
         <div class="container">
             <div class="section-header">
                 <span class="section-label">Get In Touch</span>
@@ -412,8 +414,14 @@
     </footer>
 
     <script src="script.js"></script>
+    <!-- AOS JS and initialization -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 900,
+        once: false,
+        mirror: true // Enable animation on scroll up as well
+      });
+    </script>
 </body>
 </html>
-
-
-

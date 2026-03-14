@@ -382,7 +382,7 @@ const updateFooterYear = () => {
     const footerText = document.querySelector('.footer-bottom p');
     if (footerText) {
         const currentYear = new Date().getFullYear();
-        footerText.innerHTML = `&copy; ${currentYear} Premier Infrastructure Development. All rights reserved.`;
+        footerText.innerHTML = `&copy; ${currentYear} GARUDA DEVELOPERS. All rights reserved.`;
     }
 };
 
@@ -479,6 +479,6 @@ document.head.appendChild(style);
 // Console Easter Egg
 // ===================================
 
-console.log('%cPREMIER INFRASTRUCTURE', 'color: #F4B400; font-size: 24px; font-weight: bold; font-family: Cinzel, serif;');
-console.log('%cBuilding Excellence Since 2009', 'color: #ffffff; font-size: 14px; font-family: Poppins, sans-serif;');
+console.log('%cGARUDA DEVELOPERS', 'color: #F4B400; font-size: 24px; font-weight: bold; font-family: Cinzel, serif;');
+console.log('%cBuilding Excellence Since 2017', 'color: #ffffff; font-size: 14px; font-family: Poppins, sans-serif;');
 console.log('%cInterested in working with us? Visit our careers page!', 'color: #8a8a8a; font-size: 12px; font-family: Poppins, sans-serif;');

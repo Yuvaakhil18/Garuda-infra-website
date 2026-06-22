@@ -1,4 +1,4 @@
-# 🏗️ Garuda Infra Website
+# 🏗️ Garuda Development Website
 
 A modern and responsive corporate website developed for **Garuda Infra**, designed to showcase the company's services, projects, expertise, and contact information through a professional digital presence.
 

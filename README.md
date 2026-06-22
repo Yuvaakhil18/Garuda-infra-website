@@ -71,7 +71,7 @@ The website is optimized for:
 
 ## 🎯 Purpose
 
-This website was developed to establish a professional online presence for Garuda Infra and provide clients with easy access to company information, services, and contact details.
+This website was developed to establish a professional online presence for Garuda Developers and provide clients with easy access to company information, services, and contact details.
 
 ## 📸 Screenshots
 
